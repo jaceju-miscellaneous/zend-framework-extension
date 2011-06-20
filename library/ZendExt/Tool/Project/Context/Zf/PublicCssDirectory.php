@@ -17,13 +17,13 @@
  * @subpackage Framework
  * @copyright  Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: HtaccessFile.php 23775 2011-03-01 17:25:24Z ralph $
+ * @version    $Id: PublicStylesheetsDirectory.php 23775 2011-03-01 17:25:24Z ralph $
  */
 
 /**
- * @see Zend_Tool_Project_Context_Filesystem_File
+ * @see Zend_Tool_Project_Context_Filesystem_Directory
  */
-require_once 'Zend/Tool/Project/Context/Filesystem/File.php';
+require_once 'Zend/Tool/Project/Context/Filesystem/Directory.php';
 
 /**
  * This class is the front most class for utilizing Zend_Tool_Project
@@ -36,13 +36,13 @@ require_once 'Zend/Tool/Project/Context/Filesystem/File.php';
  * @copyright  Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class ZendExt_Tool_Project_Context_Zf_HtaccessFile extends Zend_Tool_Project_Context_Filesystem_File
+class ZendExt_Tool_Project_Context_Zf_PublicCssDirectory extends Zend_Tool_Project_Context_Filesystem_Directory
 {
 
     /**
      * @var string
      */
-    protected $_filesystemName = '.htaccess';
+    protected $_filesystemName = 'css';
 
     /**
      * getName()
@@ -51,20 +51,7 @@ class ZendExt_Tool_Project_Context_Zf_HtaccessFile extends Zend_Tool_Project_Con
      */
     public function getName()
     {
-        return 'HtaccessFile';
-    }
-
-    /**
-     * getContents()
-     *
-     * @return string
-     */
-    public function getContents()
-    {
-        $output = <<<EOS
-RewriteEngine Off
-EOS;
-        return $output;
+        return 'PublicCssDirectory';
     }
 
 }

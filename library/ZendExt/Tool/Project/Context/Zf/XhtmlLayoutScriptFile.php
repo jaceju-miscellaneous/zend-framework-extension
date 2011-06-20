@@ -17,13 +17,13 @@
  * @subpackage Framework
  * @copyright  Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: PublicIndexFile.php 23775 2011-03-01 17:25:24Z ralph $
+ * @version    $Id: LayoutScriptFile.php 23775 2011-03-01 17:25:24Z ralph $
  */
 
 /**
- * @see Zend_Tool_Project_Context_Filesystem_File
+ * @see Zend_Tool_Project_Context_Zf_LayoutScriptFile
  */
-require_once 'Zend/Tool/Project/Context/Filesystem/File.php';
+require_once 'Zend/Tool/Project/Context/Zf/LayoutScriptFile.php';
 
 /**
  * This class is the front most class for utilizing Zend_Tool_Project
@@ -36,13 +36,8 @@ require_once 'Zend/Tool/Project/Context/Filesystem/File.php';
  * @copyright  Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class ZendExt_Tool_Project_Context_Zf_PublicIndexFile extends Zend_Tool_Project_Context_Filesystem_File
+class ZendExt_Tool_Project_Context_Zf_XhtmlLayoutScriptFile extends Zend_Tool_Project_Context_Zf_LayoutScriptFile
 {
-
-    /**
-     * @var string
-     */
-    protected $_filesystemName = 'index.php';
 
     /**
      * getName()
@@ -51,7 +46,7 @@ class ZendExt_Tool_Project_Context_Zf_PublicIndexFile extends Zend_Tool_Project_
      */
     public function getName()
     {
-        return 'PublicIndexFile';
+        return 'XhtmlLayoutScriptFile';
     }
 
     /**
@@ -61,12 +56,20 @@ class ZendExt_Tool_Project_Context_Zf_PublicIndexFile extends Zend_Tool_Project_
      */
     public function getContents()
     {
-        $codeGenerator = new Zend_CodeGenerator_Php_File(array(
-            'body' => <<<EOS
-header('HTTP/1.1 403 Forbidden');
-EOS
-            ));
-        return $codeGenerator->generate();
+        $contents = <<<EOS
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+<?php echo \$this->layout()->content; ?>
+</body>
+</html>
+EOS;
+
+        return $contents;
     }
 
 }

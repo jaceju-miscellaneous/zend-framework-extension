@@ -17,7 +17,7 @@
  * @subpackage Framework
  * @copyright  Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: PublicScriptsDirectory.php 23775 2011-03-01 17:25:24Z ralph $
+ * @version    $Id: PublicImagesDirectory.php 23775 2011-03-01 17:25:24Z ralph $
  */
 
 /**
@@ -36,13 +36,13 @@ require_once 'Zend/Tool/Project/Context/Filesystem/Directory.php';
  * @copyright  Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class ZendExt_Tool_Project_Context_Zf_PublicScriptsDirectory extends Zend_Tool_Project_Context_Filesystem_Directory
+class ZendExt_Tool_Project_Context_Zf_PublicImgDirectory extends Zend_Tool_Project_Context_Filesystem_Directory
 {
 
     /**
      * @var string
      */
-    protected $_filesystemName = 'js';
+    protected $_filesystemName = 'img';
 
     /**
      * getName()
@@ -51,7 +51,7 @@ class ZendExt_Tool_Project_Context_Zf_PublicScriptsDirectory extends Zend_Tool_P
      */
     public function getName()
     {
-        return 'PublicScriptsDirectory';
+        return 'PublicImgDirectory';
     }
 
 }
