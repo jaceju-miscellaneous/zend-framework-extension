@@ -115,5 +115,11 @@ class Zfe_Tool_Project_Provider_AutoloaderNamespaces
         $newContent = implode('', $newLines);
 
         file_put_contents($applicationConfigResource->getPath(), $newContent);
+
+        if (count($contentLines) !== count($newLines)) {
+            $this->_registry->getResponse()->appendContent('Autoloader-namespace \'' . $namespace . '\' have been unregistered.');
+        } else {
+            $this->_registry->getResponse()->appendContent('Autoloader-namespace \'' . $namespace . '\' not found.');
+        }
     }
 }
