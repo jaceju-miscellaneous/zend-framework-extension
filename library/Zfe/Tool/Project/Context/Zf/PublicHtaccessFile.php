@@ -36,7 +36,7 @@ require_once 'Zend/Tool/Project/Context/Filesystem/File.php';
  * @copyright  Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class ZendExt_Tool_Project_Context_Zf_PublicHtaccessFile extends Zend_Tool_Project_Context_Filesystem_File
+class Zfe_Tool_Project_Context_Zf_PublicHtaccessFile extends Zend_Tool_Project_Context_Filesystem_File
 {
 
     /**

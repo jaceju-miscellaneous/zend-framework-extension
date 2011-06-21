@@ -31,7 +31,7 @@ require_once 'Zend/Tool/Project/Provider/Project.php';
  * @copyright  Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class ZendExt_Tool_Project_Provider_PortableProject
+class Zfe_Tool_Project_Provider_PortableProject
     extends Zend_Tool_Project_Provider_Project
 {
     public function initialize()
@@ -39,7 +39,7 @@ class ZendExt_Tool_Project_Provider_PortableProject
         // load all base contexts ONCE
         $contextRegistry = Zend_Tool_Project_Context_Repository::getInstance();
         $contextRegistry->addContextsFromDirectory(
-            dirname(dirname(__FILE__)) . '/Context/Zf/', 'ZendExt_Tool_Project_Context_Zf_'
+            dirname(dirname(__FILE__)) . '/Context/Zf/', 'Zfe_Tool_Project_Context_Zf_'
         );
     }
 
@@ -108,7 +108,7 @@ class ZendExt_Tool_Project_Provider_PortableProject
             <uploadsDirectory enabled="false" />
         </dataDirectory>
         <docsDirectory>
-            <file filesystemName="README.txt" defaultContentCallback="ZendExt_Tool_Project_Provider_PortableProject::getDefaultReadmeContents"/>
+            <file filesystemName="README.txt" defaultContentCallback="Zfe_Tool_Project_Provider_PortableProject::getDefaultReadmeContents"/>
         </docsDirectory>
         <libraryDirectory>
             <zfStandardLibraryDirectory enabled="false" />
