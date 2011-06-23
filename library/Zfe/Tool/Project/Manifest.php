@@ -1,9 +1,10 @@
 <?php
 
-require 'Zfe/Tool/Project/Provider/PortableProject.php';
+require 'Zfe/Tool/Project/Provider/AdvancedProject.php';
 require 'Zfe/Tool/Project/Provider/AdvancedLayout.php';
-require 'Zfe/Tool/Project/Provider/Extension.php';
 require 'Zfe/Tool/Project/Provider/AutoloaderNamespaces.php';
+require 'Zfe/Tool/Project/Provider/Plugin.php';
+require 'Zfe/Tool/Project/Provider/ActionHelper.php';
 
 class Zfe_Tool_Project_Manifest implements
     Zend_Tool_Framework_Manifest_ProviderManifestable
@@ -11,10 +12,11 @@ class Zfe_Tool_Project_Manifest implements
     public function getProviders()
     {
         return array(
-            'Zfe_Tool_Project_Provider_PortableProject',
+            'Zfe_Tool_Project_Provider_AdvancedProject',
             'Zfe_Tool_Project_Provider_AdvancedLayout',
-            'Zfe_Tool_Project_Provider_Extension',
             'Zfe_Tool_Project_Provider_AutoloaderNamespaces',
+            'Zfe_Tool_Project_Provider_Plugin',
+            'Zfe_Tool_Project_Provider_ActionHelper',
         );
     }
 }

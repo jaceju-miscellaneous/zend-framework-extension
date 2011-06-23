@@ -31,7 +31,7 @@ require_once 'Zend/Tool/Project/Provider/Project.php';
  * @copyright  Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zfe_Tool_Project_Provider_PortableProject
+class Zfe_Tool_Project_Provider_AdvancedProject
     extends Zend_Tool_Project_Provider_Project
 {
     public function initialize()
@@ -45,10 +45,10 @@ class Zfe_Tool_Project_Provider_PortableProject
 
     /**
      * @param string $path
-     * @param type $nameOfProfile
-     * @param type $fileOfProfile
+     * @param string $nameOfProfile shortName=n
+     * @param string $fileOfProfile shortName=f
      */
-    public function create($path, $nameOfProfile = null, $fileOfProfile = null)
+    public function create($path, $configFormat = 'ini', $nameOfProfile = null, $fileOfProfile = null)
     {
         parent::create($path, $nameOfProfile, $fileOfProfile);
     }
@@ -81,6 +81,8 @@ class Zfe_Tool_Project_Provider_PortableProject
                 </controllerFile>
                 <controllerFile controllerName="Error" />
             </controllersDirectory>
+            <pluginsDirectory enabled="false" />
+            <actionHelpersDirectory enabled="false" />
             <formsDirectory enabled="false" />
             <layoutsDirectory enabled="false" />
             <modelsDirectory />
@@ -118,7 +120,7 @@ class Zfe_Tool_Project_Provider_PortableProject
             <publicJsDirectory enabled="true" />
             <publicImgDirectory enabled="true" />
             <publicLibDirectory enabled="true" />
-            <publicHtaccessFile />
+            <publicPortableHtaccessFile />
         </publicDirectory>
         <projectProvidersDirectory enabled="false" />
         <temporaryDirectory enabled="false" />
@@ -134,8 +136,8 @@ $testAction
       	    </testApplicationDirectory>
             <testLibraryDirectory />
         </testsDirectory>
-        <projectIndexFile />
-        <projectHtaccessFile />
+        <portableIndexFile />
+        <portableHtaccessFile />
     </projectDirectory>
 </projectProfile>
 EOS;
