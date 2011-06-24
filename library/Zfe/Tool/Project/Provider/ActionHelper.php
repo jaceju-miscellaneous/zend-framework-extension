@@ -124,22 +124,30 @@ class Zfe_Tool_Project_Provider_ActionHelper
         }
 
         $prefix = $appNamespace . '_ActionHelper_';
-        $path = 'APPLICATION_PATH "/helpers"';
-        $this->_addActionHelperPrefix($prefix, $path);
+        $classPath = 'APPLICATION_PATH "/helpers"';
+        $this->_addActionHelperPrefix($prefix, $classPath, false);
     }
 
-    protected function _addActionHelperPrefix($prefix, $path = null)
+    protected function _addActionHelperPrefix($prefix, $classPath = null, $quoteValue = true)
     {
         $response = $this->_registry->getResponse();
         $appConfigFile = $this->_loadedProfile->search('ApplicationConfigFile');
 
         $response->appendContent('Added a prefix/path for action helper to the application.ini file');
-        $appConfigFile->addStringItem('resources.frontController.actionHelperPaths.' . $prefix, $path, 'production', false);
+        $appConfigFile->addStringItem('resources.frontController.actionHelperPaths.' . $prefix, $classPath, 'production', $quoteValue);
         $appConfigFile->create();
     }
 
-    public function registerPrefix()
+    /**
+     * @param string $prefix
+     * @param string $path
+     */
+    public function registerPrefix($prefix, $classPath = null)
     {
-
+        $this->_loadProfile(self::NO_PROFILE_THROW_EXCEPTION);
+        if (null === $classPath) {
+            $classPath = implode('/', explode('_', rtrim($prefix, '_')));
+        }
+        $this->_addActionHelperPrefix($prefix, $classPath);
     }
 }
