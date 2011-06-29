@@ -18,7 +18,7 @@ require_once 'Zend/Tool/Project/Context/Filesystem/File.php';
  * @category   Zfe
  * @package    Zfe_Tool
  */
-class Zfe_Tool_Project_Context_Zf_ProjectHtaccessFile extends Zend_Tool_Project_Context_Filesystem_File
+class Zfe_Tool_Project_Context_Zf_PortableHtaccessFile extends Zend_Tool_Project_Context_Filesystem_File
 {
 
     /**
@@ -33,7 +33,7 @@ class Zfe_Tool_Project_Context_Zf_ProjectHtaccessFile extends Zend_Tool_Project_
      */
     public function getName()
     {
-        return 'ProjectHtaccessFile';
+        return 'PortableHtaccessFile';
     }
 
     /**

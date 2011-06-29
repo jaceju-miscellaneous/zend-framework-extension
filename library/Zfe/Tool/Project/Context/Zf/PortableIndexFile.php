@@ -18,7 +18,7 @@ require_once 'Zend/Tool/Project/Context/Filesystem/File.php';
  * @category   Zfe
  * @package    Zfe_Tool
  */
-class Zfe_Tool_Project_Context_Zf_ProjectIndexFile extends Zend_Tool_Project_Context_Filesystem_File
+class Zfe_Tool_Project_Context_Zf_PortableIndexFile extends Zend_Tool_Project_Context_Filesystem_File
 {
 
     /**
@@ -33,7 +33,7 @@ class Zfe_Tool_Project_Context_Zf_ProjectIndexFile extends Zend_Tool_Project_Con
      */
     public function getName()
     {
-        return 'ProjectIndexFile';
+        return 'PortableIndexFile';
     }
 
     /**
