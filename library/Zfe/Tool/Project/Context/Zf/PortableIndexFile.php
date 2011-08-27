@@ -59,7 +59,18 @@ set_include_path(implode(PATH_SEPARATOR, array(
     get_include_path(),
 )));
 
-/** Zend_Application */
+// Error Handler
+set_error_handler('errorExceptionHandler');
+
+function errorExceptionHandler(\$level, \$message, \$file, \$line)
+{
+    if (in_array(\$level, array(E_USER_ERROR, E_ERROR))) {
+        throw new ErrorException(\$message, 0, \$level, \$file, \$line);
+    }
+    return false; // 回復為預設的錯誤處理機制
+}
+
+// Zend_Application
 require_once 'Zend/Application.php';
 
 // Create application, bootstrap, and run

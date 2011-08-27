@@ -31,16 +31,6 @@ class Zfe_Tool_Project_Provider_AdvancedProject
     }
 
     /**
-     * @param string $path
-     * @param string $nameOfProfile shortName=n
-     * @param string $fileOfProfile shortName=f
-     */
-    public function create($path, $configFormat = 'ini', $nameOfProfile = null, $fileOfProfile = null)
-    {
-        parent::create($path, $nameOfProfile, $fileOfProfile);
-    }
-
-    /**
      * @return string
      */
     protected function _getDefaultProfile()
