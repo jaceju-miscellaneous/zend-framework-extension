@@ -1,18 +1,24 @@
 ## Install
 
-Checkout the source from Subversion repository:
+Checkout the source from GitHub repository:
 
-`svn checkout http://zend-framework-extension.googlecode.com/svn/trunk/library/Zfe /path/to/library`
+<pre>
+git clone git://github.com/jaceju/zend_framework_extension.git
+</pre>
 
 Add manifest to ~/.zf.ini
 
-`zf enable config.manifest Zfe_Tool_Project_Manifest`
+<pre>
+zf enable config.manifest Zfe_Tool_Project_Manifest
+</pre>
 
 ## Usage
 
 Creaet Portable Project:
 
-`zf create advanced-project path`
+<pre>
+zf create advanced-project path
+</pre>
 
 Enable Advanced Layout:
 
@@ -39,16 +45,24 @@ zf unregister autoloader-namespaces name
 
 Create action helper for project:
 
-`zf create action-helper name`
+<pre>
+zf create action-helper name
+</pre>
 
 Register action helper prefix/path:
 
-`zf register action-helper.prefix prefix [class-path]`
+<pre>
+zf register action-helper.prefix prefix [class-path]
+</pre>
 
 Create Front Controller Plugin:
 
-`zf create plugin name`
+<pre>
+zf create plugin name
+</pre>
 
 Register Front Controller Plugin:
 
-`zf register plugin class-name`
+<pre>
+zf register plugin class-name
+</pre>
