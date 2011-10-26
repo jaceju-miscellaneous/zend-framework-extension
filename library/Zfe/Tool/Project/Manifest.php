@@ -35,6 +35,11 @@ require 'Zfe/Tool/Project/Provider/Plugin.php';
 require 'Zfe/Tool/Project/Provider/ActionHelper.php';
 
 /**
+ * @see Zfe_Tool_Project_Provider_Smarty
+ */
+require 'Zfe/Tool/Project/Provider/Smarty.php';
+
+/**
  * @category   Zfe
  * @package    Zfe_Tool
  */
@@ -53,6 +58,7 @@ class Zfe_Tool_Project_Manifest implements
             'Zfe_Tool_Project_Provider_AutoloaderNamespaces',
             'Zfe_Tool_Project_Provider_Plugin',
             'Zfe_Tool_Project_Provider_ActionHelper',
+            'Zfe_Tool_Project_Provider_Smarty',
         );
     }
 }

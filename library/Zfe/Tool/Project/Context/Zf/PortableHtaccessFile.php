@@ -44,7 +44,6 @@ class Zfe_Tool_Project_Context_Zf_PortableHtaccessFile extends Zend_Tool_Project
     public function getContents()
     {
         $output = <<<EOS
-SetEnv APPLICATION_ENV development
 Options -Indexes
 RewriteEngine On
 RewriteRule ^(css|js|img)/(.*)$ public/$1/$2 [L]

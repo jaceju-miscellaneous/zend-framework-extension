@@ -56,7 +56,7 @@ class Zfe_Tool_Project_Provider_AdvancedLayout extends Zend_Tool_Project_Provide
      * @param string $doctype
      * @return void
      */
-    public function enable($doctype = 'xhtml')
+    public function enable($doctype = 'html5')
     {
         $profile = $this->_loadProfile(self::NO_PROFILE_THROW_EXCEPTION);
 
