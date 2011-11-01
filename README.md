@@ -14,54 +14,51 @@ zf enable config.manifest Zfe_Tool_Project_Manifest
 
 ## Usage
 
-Creaet Portable Project:
+To Creaet Portable Project:
 
 <pre>
 zf create advanced-project path
 </pre>
 
-Enable Advanced Layout:
+To Enable Advanced HTML5 Layout:
 
 <pre>
--- default doctype is XHTML --
-
 zf enable advanced-layout
-
--- use HTML5 layout --
-
-zf enable advanced-layout html5
-
--- or --
-
-zf enable advanced-layout --doctype=html5
 </pre>
 
-Register/Unregister autoloader-namespace:
+Then you can use compass and livereload to watch the new project (Install compass and livereload first) :
+
+<pre>
+compass watch path
+livereload path
+</pre>
+
+To Register/Unregister autoloader-namespace:
 
 <pre>
 zf register autoloader-namespaces name
 zf unregister autoloader-namespaces name
 </pre>
 
-Create action helper for project:
+To Create action helper for project:
 
 <pre>
 zf create action-helper name
 </pre>
 
-Register action helper prefix/path:
+To Register action helper prefix/path:
 
 <pre>
 zf register action-helper.prefix prefix [class-path]
 </pre>
 
-Create Front Controller Plugin:
+To Create Front Controller Plugin:
 
 <pre>
 zf create plugin name
 </pre>
 
-Register Front Controller Plugin:
+To Register Front Controller Plugin:
 
 <pre>
 zf register plugin class-name
