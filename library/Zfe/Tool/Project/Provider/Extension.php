@@ -24,9 +24,27 @@ class Zfe_Tool_Project_Provider_Extension extends Zend_Tool_Project_Provider_Abs
      *
      * @param string $name
      */
-    public function install($path)
+    public function install($name)
     {
-        echo $path, "\n";
+        $name = strtolower($name);
+
+        $extensionPath = realpath(dirname(__FILE__) . '/Extensions');
+        $zipFile = $extensionPath . '/' . $name . '.zip';
+        $tempPath = sys_get_temp_dir();
+
+        echo $zipFile, "\n";
+        echo $tempPath, "\n";
+
+        if (!is_file($zipFile)) {
+            echo "$name is not a valid extension.\n";
+            return;
+        }
+
+        $zip = new ZipArchive();
+        if ($zip->open($zipFile)) {
+            $zip->extractTo($tempPath);
+            $zip->close();
+        }
     }
 
     public function uninstall($name)

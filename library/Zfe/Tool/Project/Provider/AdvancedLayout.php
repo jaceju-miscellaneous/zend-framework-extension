@@ -22,13 +22,10 @@ class Zfe_Tool_Project_Provider_AdvancedLayout extends Zend_Tool_Project_Provide
 {
     /**
      * @param Zend_Tool_Project_Profile $profile
-     * @param string $doctype
      * @return Zend_Tool_Project_Context_Filesystem_File
      */
-    public static function createResource(Zend_Tool_Project_Profile $profile, $doctype = 'xhtml')
+    public static function createResource(Zend_Tool_Project_Profile $profile)
     {
-        $doctype = ucfirst(strtolower($doctype));
-
         $applicationDirectory = $profile->search('applicationDirectory');
         $layoutDirectory = $applicationDirectory->search('layoutsDirectory');
 
@@ -42,7 +39,7 @@ class Zfe_Tool_Project_Provider_AdvancedLayout extends Zend_Tool_Project_Provide
             $layoutScriptsDirectory = $layoutDirectory->createResource('layoutScriptsDirectory');
         }
 
-        $resourceName = $doctype . 'LayoutScriptFile';
+        $resourceName = 'Html5LayoutScriptFile';
         $layoutScriptFile = $layoutScriptsDirectory->search($resourceName, array('layoutName' => 'layout'));
 
         if ($layoutScriptFile == false) {
@@ -56,7 +53,7 @@ class Zfe_Tool_Project_Provider_AdvancedLayout extends Zend_Tool_Project_Provide
      * @param string $doctype
      * @return void
      */
-    public function enable($doctype = 'html5')
+    public function enable()
     {
         $profile = $this->_loadProfile(self::NO_PROFILE_THROW_EXCEPTION);
 
@@ -81,7 +78,7 @@ class Zfe_Tool_Project_Provider_AdvancedLayout extends Zend_Tool_Project_Provide
             $applicationConfigResource->addStringItem('resources.layout.layoutPath', $layoutPath, 'production', false);
             $applicationConfigResource->create();
 
-            $layoutScriptFile = self::createResource($profile, $doctype);
+            $layoutScriptFile = self::createResource($profile);
 
             $layoutScriptFile->create();
 

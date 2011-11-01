@@ -28,6 +28,9 @@ class Zfe_Tool_Project_Provider_AdvancedProject
         $contextRegistry->addContextsFromDirectory(
             dirname(dirname(__FILE__)) . '/Context/Zf/', 'Zfe_Tool_Project_Context_Zf_'
         );
+        $contextRegistry->addContextsFromDirectory(
+            dirname(dirname(__FILE__)) . '/Context/WebDev/', 'Zfe_Tool_Project_Context_WebDev_'
+        );
     }
 
     /**
@@ -93,7 +96,11 @@ class Zfe_Tool_Project_Provider_AdvancedProject
             <zfStandardLibraryDirectory enabled="false" />
         </libraryDirectory>
         <publicDirectory>
-            <publicCssDirectory enabled="true" />
+            <publicCssDirectory>
+                <IeCss />
+                <ScreenCss />
+                <PrintCss />
+            </publicCssDirectory>
             <publicJsDirectory enabled="true" />
             <publicImgDirectory enabled="true" />
             <publicLibDirectory enabled="true" />
@@ -113,8 +120,15 @@ $testAction
       	    </testApplicationDirectory>
             <testLibraryDirectory />
         </testsDirectory>
+        <sassDirectory>
+            <IeSass />
+            <ScreenSass />
+            <PrintSass />
+        </sassDirectory>
         <portableIndexFile />
         <portableHtaccessFile />
+        <compassConfig />
+        <liveReloadConfig />
     </projectDirectory>
 </projectProfile>
 EOS;

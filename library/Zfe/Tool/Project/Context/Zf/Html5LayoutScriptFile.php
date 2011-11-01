@@ -82,19 +82,24 @@ class Zfe_Tool_Project_Context_Zf_Html5LayoutScriptFile extends Zend_Tool_Projec
     public function getContents()
     {
         $contents = <<<EOS
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
 <!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title></title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title></title>
+  <link href="<?php echo \$this->baseUrl('/css/screen.css'); ?>" media="screen, projection" rel="stylesheet" />
+  <link href="<?php echo \$this->baseUrl('/css/print.css'); ?>" media="print" rel="stylesheet" />
+  <!--[if IE]>
+    <link href="<?php echo \$this->baseUrl('/css/ie.css'); ?>" media="screen, projection" rel="stylesheet" />
+  <![endif]-->
 </head>
 <body>
 <?php echo \$this->layout()->content; ?>
